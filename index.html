@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Watch</title>
+    <style>
+        #digital-watch {
+            font-size: 2em;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <div id="digital-watch"></div>
+
+    <script>
+        function updateDigitalClock() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            const timeString = `${hours}:${minutes}:${seconds}`;
+
+            document.getElementById('digital-watch').textContent = timeString;
+        }
+
+        setInterval(updateDigitalClock, 1000);
+        updateDigitalClock(); // Call initially to set the correct time
+    </script>
+</body>
+</html>
+
